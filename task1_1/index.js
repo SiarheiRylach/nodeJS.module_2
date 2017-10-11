@@ -3,5 +3,12 @@
  */
 
 const FlowerInPot = require('./flower/flowerInPot');
+const Shop = require('./shop');
+const Bunch = require('./bunch');
 
-console.log( new FlowerInPot(30, undefined, undefined, "not specified", 10));
+let shop = new Shop();
+
+shop.addToOrder(new FlowerInPot(200, undefined, undefined, undefined, undefined));
+shop.addToOrder(new FlowerInPot(300, undefined, undefined, undefined, undefined));
+
+console.log(shop.getPriceOrder());

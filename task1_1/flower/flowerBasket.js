@@ -2,13 +2,14 @@
  * Created by Siarhei_Rylach on 10/11/2017.
  */
 
-const Flower = require('./flower');
+const AbstractFlower = require('./abstractFlower');
 
 function FlowerBasket(price, countryFrom, dateOfReceipt, count = "not specified") {
-    Flower.apply(this, arguments);
+    AbstractFlower.apply(this, arguments);
     this.countOfFlowers  = count;
 }
 
-
-FlowerBasket.prototype = Object.create(Flower.prototype);
+FlowerBasket.prototype = Object.create(AbstractFlower.prototype);
 FlowerBasket.prototype.constructor = FlowerBasket;
+
+module.exports = FlowerBasket;
