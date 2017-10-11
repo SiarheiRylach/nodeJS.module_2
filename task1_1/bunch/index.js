@@ -1,7 +1,7 @@
 /**
  * Created by Siarhei_Rylach on 10/11/2017.
  */
-let Flower = require('../flower/flower');
+let Flower = require('../entities/flower');
 
 function Bunch() {
     this.flowers = [];
@@ -15,7 +15,7 @@ function Bunch() {
 
 }
 
-Bunch.prototype.addFlower = (flower)=>{
+Bunch.prototype.addFlower = function(flower){
     if(flower instanceof Flower){
         this.flowers.push(flower);
     }

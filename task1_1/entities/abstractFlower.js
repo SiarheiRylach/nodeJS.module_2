@@ -3,7 +3,6 @@
  */
 
 function AbstractFlower(price, countryFrom = "Belarus", dateOfReceipt = new Date()){
-    this.id;
     this.price = price;
     this.countryFrom = countryFrom;
     this.dateOfReceipt = dateOfReceipt;

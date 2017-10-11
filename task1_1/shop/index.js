@@ -2,8 +2,6 @@
  * Created by Siarhei_Rylach on 10/11/2017.
  */
 
-const AbstractFlower = require("../flower/abstractFlower");
-
 let Shop =( ()=>{
     let instance;
     
