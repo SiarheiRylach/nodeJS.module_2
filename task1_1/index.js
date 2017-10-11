@@ -20,4 +20,4 @@ bunchOfRoses.addFlower(new Flower(300, "Germany", new Date(), 60, "pink"));
 
 shop.addToOrder(bunchOfRoses);
 
-console.log(shop);
+console.log(shop.getPriceOrder());
