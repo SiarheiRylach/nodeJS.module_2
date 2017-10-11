@@ -20,7 +20,7 @@ Bunch.prototype.addFlower = function(flower){
         this.flowers.push(flower);
     }
 
-    // to do add console.log for incorrect type
+    console.log("It's not a flower from this shop");
 };
 
 module.exports = Bunch;
