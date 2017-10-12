@@ -18,9 +18,9 @@ function Bunch() {
 Bunch.prototype.addFlower = function(flower){
     if(flower instanceof Flower){
         this.flowers.push(flower);
+    }else{
+        console.log("It's not a flower");
     }
-
-    console.log("It's not a flower from this shop");
 };
 
 module.exports = Bunch;

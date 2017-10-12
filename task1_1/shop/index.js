@@ -1,8 +1,6 @@
 /**
  * Created by Siarhei_Rylach on 10/11/2017.
  */
-const util = require('util');
-
 let Shop =( ()=>{
     let instance;
     
@@ -19,9 +17,9 @@ let Shop =( ()=>{
 
         if( (typeof elem === "object") && ("price" in elem) ){
             instance.order.push(elem);
+        }else{
+            console.log("It's not a product from this shop");
         }
-
-        console.log("It's not a product from this shop");
     };
 
     ShopSingleton.prototype.getPriceOrder = function(){
