@@ -1,15 +1,11 @@
 task1_1
-
-Hierarchy of classes for flower shop
+  Hierarchy of classes for flower shop
 
 Getting Started
-
   Use cmd command "node index" from folder "task1_1" . 
 
 Prerequisites
-
   Install nodejs to your OS and set all environment variables for node js.
 
 Authors
-
   Siarhei Rylach
