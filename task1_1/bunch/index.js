@@ -5,9 +5,10 @@ let Flower = require('../entities/flower');
 
 function Bunch() {
     this.flowers = [];
+    this._price = 0
     Object.defineProperty(this, "price", {
         get: function(){
-            return this.flowers.reduce((sum, current)=>{
+            return  this._price = this.flowers.reduce((sum, current)=>{
                 return sum + current.price;
             }, 0);
         }

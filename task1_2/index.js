@@ -1,6 +1,7 @@
 /**
- * Created by Siarhei_Rylach on 10/11/2017.
+ * Created by Siarhei_Rylach on 10/12/2017.
  */
+
 
 const FlowerInPot = require('./entities/flowerInPot');
 const FlowerBasket = require('./entities/flowerBasket');
@@ -28,4 +29,3 @@ console.log(shop);
 
 shop.sortLowToHigh();
 console.log(shop);
-

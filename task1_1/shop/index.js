@@ -28,6 +28,18 @@ let Shop =( ()=>{
         }, 0);
     };
 
+    ShopSingleton.prototype.sortLowToHigh = function(){
+        this.order.sort((a, b )=>{
+            return a.price - b.price;
+        });
+    };
+
+    ShopSingleton.prototype.sortHighToLow = function(){
+        this.order.sort((a, b )=>{
+            return  b.price - a.price;
+        });
+    };
+
     return ShopSingleton;
 } )();
 
