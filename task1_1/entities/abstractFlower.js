@@ -8,7 +8,9 @@ function AbstractFlower(price, countryFrom = "Belarus", dateOfReceipt = new Date
     this.dateOfReceipt = dateOfReceipt;
 }
 
-AbstractFlower.prototype.smell = ()=>console.log("it's is smelling");
+AbstractFlower.prototype.smell = function(){
+    console.log("it's is smelling")
+};
 
 module.exports = AbstractFlower;
 
