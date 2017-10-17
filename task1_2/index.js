@@ -1,31 +1,60 @@
 /**
  * Created by Siarhei_Rylach on 10/12/2017.
  */
-
-
 const FlowerInPot = require('./entities/flowerInPot');
 const FlowerBasket = require('./entities/flowerBasket');
 const Shop = require('./shop');
 const Bunch = require('./bunch');
 const Flower = require('./entities/flower');
+const MongoClient = require('mongodb').MongoClient;
 
-let shop = new Shop();
+// Connect to the db
+MongoClient.connect("mongodb://localhost:27017/flowershop", function(err, db) {
 
-shop.addToOrder(new FlowerInPot(200, undefined, undefined, undefined, undefined));
-shop.addToOrder(new FlowerInPot(300, undefined, undefined, undefined, undefined));
+	if(err){
+		throw err;
+	}
 
-shop.addToOrder(new FlowerBasket(150, "Italy", new Date(3000000), 10));
-let bunchOfRoses = new Bunch();
-bunchOfRoses.addFlower(new Flower(50, "France", new Date(), 50, "red"));
-bunchOfRoses.addFlower(12312);
-bunchOfRoses.addFlower(new Flower(300, "Germany", new Date(), 60, "pink"));
+	 new Promise((resolve, reject)=>{
+	 	db.collection('flower').find({}).toArray(function(err, items){
+	 		let shop = new Shop();
+	 		let bunch = new Bunch();
+	 		items.forEach(elem=>{
+	 			bunch.addFlower(new Flower(elem.price, elem.country, new Date(), elem.height, elem.color));
+	 		});
+	 		shop.addToOrder(bunch);
 
-shop.addToOrder(bunchOfRoses);
+		 	resolve(shop);
+	 	});
+	 })
+	 .then(shop=>{
+	 	return new Promise((resolve, reject)=>{
+	 		db.collection('flower_basket').find({}).toArray(function(err, items){
+		 		items.forEach(elem=>{
+	 				shop.addToOrder(new FlowerBasket(elem.price, elem.country, new Date(3000000), elem.count));
+	 			});	
+		 		resolve(shop);
+	 		});
+	 	});
+	 })
+	 .then(shop=>{
+	 	return new Promise((resolve, reject)=>{
+	 		db.collection('flower_in_pot').find({}).toArray(function(err, items){
+		 		items.forEach(elem=>{
+	 				shop.addToOrder(new FlowerInPot(elem.price, elem.country, new Date(), elem.height, elem.potD));
+	 			});		
+		 		resolve(shop);
+	 		});
+	 	});
+	 })
+	 .then((shop)=>{
+	 	console.log(shop.getPriceOrder());
 
-console.log(shop.getPriceOrder());
+	 	shop.sortHighToLow();
+		console.log(shop);
 
-shop.sortHighToLow();
-console.log(shop);
-
-shop.sortLowToHigh();
-console.log(shop);
+		shop.sortLowToHigh();
+		console.log(shop);
+	 })
+	 .then(()=>db.close());
+});

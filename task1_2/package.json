@@ -11,5 +11,8 @@
     "url": "https://github.com/SiarheiRylach/nodeJS.module_2/tree/master/task1_2"
   },
   "author": "Siarhei Rylach",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.33"
+  }
 }
