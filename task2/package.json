@@ -1,0 +1,25 @@
+{
+  "name": "task2",
+  "version": "0.0.1",
+  "description": "first attempt to use protractor.js",
+  "scripts": {
+    "update": "webdriver-manager update",
+    "e2e": "protractor protractor.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiarheiRylach/nodeJS.module_2.git"
+  },
+  "author": "Siarhei Rylach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiarheiRylach/nodeJS.module_2/issues"
+  },
+  "homepage": "https://github.com/SiarheiRylach/nodeJS.module_2#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "cucumber": "1.*",
+    "protractor": "^5.1.2",
+    "protractor-cucumber-framework": "^4.0.8"
+  }
+}
