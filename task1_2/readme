@@ -1,11 +1,13 @@
 task1_2
   Hierarchy of classes via class for flower shop
-
+  
+Prerequisites
+  1)Install nodejs to your OS and set all environment variables for node js.
+  2)Restore database from folder "flowershop_db_backup".
+  3)Use cmd command "npm i" from folder "task1_2" .
+  
 Getting Started
   Use cmd command "node index" from folder "task1_2" .
-
-Prerequisites
-  Install nodejs to your OS and set all environment variables for node js.
 
 Authors
   Siarhei Rylach
