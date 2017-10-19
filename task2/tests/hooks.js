@@ -13,6 +13,9 @@ module.exports = function () {
             })
             .then(() => {
                 return world.signedUserMenu.logout.click();
+            })
+            .then(() => {
+                return browser.sleep(3000);
             });
     });
 };
