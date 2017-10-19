@@ -14,6 +14,5 @@ module.exports = function () {
             .then(() => {
                 return world.signedUserMenu.logout.click();
             });
-
     });
 };
